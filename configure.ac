@@ -1,5 +1,11 @@
 AC_INIT([helloworld], [0.1], [maintainer@example.com])
 
+AX_JNI_INCLUDE_DIR
+for JNI_INCLUDE_DIR in $JNI_INCLUDE_DIRS
+do
+    CFLAGS="$CFLAGS -I$JNI_INCLUDE_DIR"
+done
+
 AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_CONFIG_FILES([Makefile])
